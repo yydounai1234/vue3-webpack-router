@@ -22,7 +22,8 @@ export default {
 		console.log('页面加载')
 	},
 	components: { RouterView, RouterLink },
-	setup() {}
+	setup() {
+	}
 }
 </script>
 <style>
