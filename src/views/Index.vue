@@ -23,12 +23,14 @@
 </template>
 <script>
 import Banner from '../components/Banner.vue'
-import time from '../common/time'
+import setTime from '../common/time'
+import setTitle from '../common/title'
 import { computed, reactive } from 'vue'
 export default {
 	components: { Banner },
 	setup() {
-		const timePower = time()
+		setTitle('首页')
+		const timeSetup = setTime()
 		const items = reactive([
 			{
 				title: '#818##没想到有一天我也会发818,坐标8合1,拿好板凳',
@@ -68,7 +70,7 @@ export default {
 		])
 		return {
 			items,
-			...timePower
+			...timeSetup
 		}
 	}
 }

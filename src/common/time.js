@@ -1,6 +1,6 @@
 import { ref, onMounted,onUnmounted } from 'vue'
 
-export default function time() {
+export default function setTime() {
     let timer = null
     const time = ref(0)
     onMounted(() => {
