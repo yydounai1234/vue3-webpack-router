@@ -5,6 +5,7 @@
     "build": "webpack --env.prod"
   },
   "dependencies": {
+    "swiper": "^5.2.1",
     "vue": "^3.0.0-alpha.1"
   },
   "devDependencies": {

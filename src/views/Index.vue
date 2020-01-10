@@ -1,12 +1,13 @@
 <template>
-    <div>首页</div>
+	<Banner></Banner>
+	<div>首页</div>
 </template>
 <script>
+import Banner from '../components/Banner.vue'
 export default {
-    setup() {
-        return {
-            
-        }
-    }
+	components: { Banner },
+	setup() {
+		return {}
+	}
 }
 </script>
