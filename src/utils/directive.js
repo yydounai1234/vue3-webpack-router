@@ -1,5 +1,5 @@
 export const title = {
-    mounted:function(el,binding) {
-        document.title = binding.value
-    }
+  mounted: (el, binding) => {
+    document.title = binding.value
+  }
 }

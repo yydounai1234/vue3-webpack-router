@@ -1,5 +1,12 @@
 <template>
 	<div v-title="'首页'">
+		<header>首页的一个东西</header>
+		<section class="search-bar-wrap">
+			<section class="search-bar">
+				<aside class="search-icon"></aside>
+				<aside class="search-val">请输入搜索关键字</aside>
+			</section>
+		</section>
 		<Banner></Banner>
 		<div>人物专栏</div>
 		<div>浏览时间{{time}}秒</div>
@@ -90,5 +97,43 @@ export default {
 	box-shadow: 0px 0px 5px rgb(92, 173, 255);
 	border-radius: 10px;
 	padding: 10px;
+}
+.search-bar-wrap {
+	box-sizing: border-box;
+	background: #fff;
+	cursor: pointer;
+	position: sticky;
+	top: -1px;
+	left: 0;
+	right: 0;
+	z-index: 6;
+	padding: 0.12rem;
+	margin-bottom: 0.1rem;
+}
+.search-bar {
+	padding: 0.16rem 0.1rem;
+	background: #f5f5f5;
+	border: 1px solid #e9e9e9;
+	border-radius: 1.55rem;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.search-icon {
+	flex-shrink: 0;
+	width: 0.1rem;
+	height: 0.1rem;
+	margin-top: 1px;
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfCAYAAADwbH0HAAAACXBIW…i3pdaP7UXBsyoITzBf0Q3L9ua8wSH4YBFgH77q/p/hv/QN44Jy8O6nJW0AAAAASUVORK5CYII=)
+		no-repeat 50%;
+	background-size: 0.2rem;
+}
+.search-val {
+	color: #b3b3b3;
+	font-size: 0.16rem;
+	margin-left: 0.1rem;
 }
 </style>

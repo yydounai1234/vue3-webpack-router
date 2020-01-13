@@ -53,19 +53,21 @@ export default {
 </script>
 <style>
 .warp {
+	overflow: hidden;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 }
 .item {
-	height: 92%;
+	overflow-y: scroll;
+	height: calc(100% - 52px);
 }
 .nav {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	font-weight: bold;
-	height: 8%;
+	height: 52px;
 	box-shadow: 0 -11px 32px rgba(0, 0, 0, 0.08);
 }
 .nav-item {
