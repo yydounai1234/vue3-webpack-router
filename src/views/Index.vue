@@ -10,21 +10,39 @@
 			</section>
 		</section>
 		<Banner></Banner>
-		<div>人物专栏</div>
-		<div>浏览时间{{time}}秒</div>
+		<!-- <div>人物专栏</div>
+		<div>浏览时间{{time}}秒</div>-->
 		<div class="index-container">
 			<div class="index-items">
-				<div class="index-item" v-for="item in items.slice(0,3)" :key="item.href">
-					<div>{{item.title}}</div>
-					<div>{{item.content}}</div>
-					<div>{{item.violet}}</div>
+				<div class="index-item" v-for="item in items.slice(0,3)" :key="item.href" @click="handleGoDetail">
+					<div class="title">
+						<span>标题：</span>
+						{{item.title}}
+					</div>
+					<div class="content">
+						<span>内容：</span>
+						{{item.content}}
+					</div>
+					<div class="violet">
+						<span>作者：</span>
+						{{item.violet}}
+					</div>
 				</div>
 			</div>
 			<div class="index-items">
-				<div class="index-item" v-for="item in items.slice(3,5)" :key="item.href">
-					<div>{{item.title}}</div>
-					<div>{{item.content}}</div>
-					<div>{{item.violet}}</div>
+				<div class="index-item" v-for="item in items.slice(3,5)" :key="item.href" @click="handleGoDetail">
+					<div class="title">
+						<span>标题：</span>
+						{{item.title}}
+					</div>
+					<div class="content">
+						<span>内容：</span>
+						{{item.content}}
+					</div>
+					<div class="violet">
+						<span>作者：</span>
+						{{item.violet}}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -33,11 +51,12 @@
 <script>
 import Banner from '../components/Banner.vue'
 import setTime from '../common/time'
-import { computed, reactive } from 'vue'
+import { computed, reactive,inject } from 'vue'
 export default {
 	components: { Banner },
 	setup() {
 		const timeSetup = setTime()
+		const $routes = inject('$route')
 		const items = reactive([
 			{
 				title: '#818##没想到有一天我也会发818,坐标8合1,拿好板凳',
@@ -75,8 +94,12 @@ export default {
 				href: '/p/6220304373?pid=126995334468&cid=0#126995334468'
 			}
 		])
+		const handleGoDetail = () => {
+			$routes.push('/detail')
+		}
 		return {
 			items,
+			handleGoDetail,
 			...timeSetup
 		}
 	}
@@ -97,22 +120,39 @@ export default {
 
 .index-item {
 	margin-top: 0.2rem;
-	box-shadow: 0px 0px 0.1rem rgb(92, 173, 255);
+	box-shadow: 0px 0px 0.1rem #d44d44;
 	border-radius: 0.2rem;
 	padding: 0.2rem;
+}
+.title,
+.content,
+.violet {
+	margin-bottom: 0.1rem;
+}
+.title span {
+	color: #d44d44;
+	font-weight: bold;
+}
+.content span {
+	color: #d44d44;
+	font-weight: bold;
+}
+.violet span {
+	color: #d44d44;
+	font-weight: bold;
 }
 header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: .5rem;
+	min-height: 0.5rem;
 }
-.logo{
-	width: .5rem;
-	height: .5rem;
+.logo {
+	width: 0.5rem;
+	height: 0.5rem;
 	background: url('../assets/images/logo.png') no-repeat 50%;
-	background-size: .5rem;
-	margin:0.1rem
+	background-size: 0.5rem;
+	margin: 0.1rem;
 }
 .search-bar-wrap {
 	box-sizing: border-box;

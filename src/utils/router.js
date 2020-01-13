@@ -4,6 +4,9 @@ class Route {
     this.current = ref('/')
     this.routes = routes
     this.pushEffects = []
+    window.onpopstate = (e) => {
+      console.log(312321321,e)
+    }
   }
   push(href) {
     window.history.pushState(null, null, href)
