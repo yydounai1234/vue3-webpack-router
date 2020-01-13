@@ -1,6 +1,8 @@
 <template>
 	<div v-title="'首页'">
-		<header>首页的一个东西</header>
+		<header>
+			<figure class="logo"></figure>
+		</header>
 		<section class="search-bar-wrap">
 			<section class="search-bar">
 				<aside class="search-icon"></aside>
@@ -87,16 +89,30 @@ export default {
 	flex-direction: row;
 	justify-content: space-evenly;
 	margin: 0 auto;
+	padding-bottom: 0.3rem;
 }
 .index-items {
 	width: 45%;
 }
 
 .index-item {
-	margin-top: 10px;
-	box-shadow: 0px 0px 5px rgb(92, 173, 255);
-	border-radius: 10px;
-	padding: 10px;
+	margin-top: 0.2rem;
+	box-shadow: 0px 0px 0.1rem rgb(92, 173, 255);
+	border-radius: 0.2rem;
+	padding: 0.2rem;
+}
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: .5rem;
+}
+.logo{
+	width: .5rem;
+	height: .5rem;
+	background: url('../assets/images/logo.png') no-repeat 50%;
+	background-size: .5rem;
+	margin:0.1rem
 }
 .search-bar-wrap {
 	box-sizing: border-box;
@@ -124,11 +140,10 @@ export default {
 }
 .search-icon {
 	flex-shrink: 0;
-	width: 0.1rem;
-	height: 0.1rem;
+	width: 0.2rem;
+	height: 0.2rem;
 	margin-top: 1px;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAfCAYAAADwbH0HAAAACXBIW…i3pdaP7UXBsyoITzBf0Q3L9ua8wSH4YBFgH77q/p/hv/QN44Jy8O6nJW0AAAAASUVORK5CYII=)
-		no-repeat 50%;
+	background: url('../assets/images/search.png') no-repeat 50%;
 	background-size: 0.2rem;
 }
 .search-val {
