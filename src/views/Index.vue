@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-title="'首页'">
 		<Banner></Banner>
 		<div>人物专栏</div>
 		<div>浏览时间{{time}}秒</div>
@@ -24,12 +24,10 @@
 <script>
 import Banner from '../components/Banner.vue'
 import setTime from '../common/time'
-import setTitle from '../common/title'
 import { computed, reactive } from 'vue'
 export default {
 	components: { Banner },
 	setup() {
-		setTitle('首页')
 		const timeSetup = setTime()
 		const items = reactive([
 			{

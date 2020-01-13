@@ -1,5 +1,5 @@
 <template>
-    <div>我的</div>
+    <div v-title="'我的'">我的</div>
 </template>
 <script>
 export default {

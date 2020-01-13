@@ -1,11 +1,13 @@
+import { ref } from 'vue'
 class Route {
   constructor(routes) {
-    this.current = '/'
+    this.current = ref('/')
     this.routes = routes
     this.pushEffects = []
   }
   push(href) {
     window.history.pushState(null, null, href)
+    this.current.value = href
     this.run(href)
   }
   run(href) {
