@@ -15,7 +15,7 @@ export default function setTime() {
         }
     })
     onMounted(() => {
-        rawTime = setInterval(() => {
+        timer = setInterval(() => {
             ++rawTime.value
         },1000)
     })

@@ -60,12 +60,10 @@
 </template>
 <script>
 import Banner from '../components/Banner.vue'
-import setTime from '../common/time'
 import { computed, reactive, inject } from 'vue'
 const a = {
 	components: { Banner },
 	setup() {
-		const timeSetup = setTime()
 		const $routes = inject('$route')
 		const items = reactive([
 			{
@@ -109,8 +107,7 @@ const a = {
 		}
 		return {
 			items,
-			handleGoDetail,
-			...timeSetup
+			handleGoDetail
 		}
 	}
 }
