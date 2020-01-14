@@ -14,7 +14,12 @@
 		<div>浏览时间{{time}}秒</div>-->
 		<div class="index-container">
 			<div class="index-items">
-				<div class="index-item" v-for="item in items.slice(0,3)" :key="item.href" @click="handleGoDetail">
+				<div
+					class="index-item"
+					v-for="item in items.slice(0,3)"
+					:key="item.href"
+					@click="handleGoDetail"
+				>
 					<div class="title">
 						<span>标题：</span>
 						{{item.title}}
@@ -30,7 +35,12 @@
 				</div>
 			</div>
 			<div class="index-items">
-				<div class="index-item" v-for="item in items.slice(3,5)" :key="item.href" @click="handleGoDetail">
+				<div
+					class="index-item"
+					v-for="item in items.slice(3,5)"
+					:key="item.href"
+					@click="handleGoDetail"
+				>
 					<div class="title">
 						<span>标题：</span>
 						{{item.title}}
@@ -51,8 +61,8 @@
 <script>
 import Banner from '../components/Banner.vue'
 import setTime from '../common/time'
-import { computed, reactive,inject } from 'vue'
-export default {
+import { computed, reactive, inject } from 'vue'
+const a = {
 	components: { Banner },
 	setup() {
 		const timeSetup = setTime()
@@ -104,6 +114,7 @@ export default {
 		}
 	}
 }
+export default a
 </script>
 <style scoped>
 .index-container {

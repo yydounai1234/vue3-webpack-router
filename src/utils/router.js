@@ -4,8 +4,9 @@ class Route {
     this.current = ref('/')
     this.routes = routes
     this.pushEffects = []
-    window.onpopstate = (e) => {
-      console.log(312321321,e)
+    window.onpopstate = ({ target }) => {
+      this.current.value = target.location.pathname
+      this.run(target.location.pathname)
     }
   }
   push(href) {

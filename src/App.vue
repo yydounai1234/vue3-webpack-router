@@ -3,7 +3,7 @@
 		<div class="item">
 			<RouterView></RouterView>
 		</div>
-		<div class="nav">
+		<div class="nav" v-if="current === '/' || current === '/mine'">
 			<RouterLink to="/">
 				<div v-if="current === '/'" class="nav-item">
 					<img class="nav-img" src="./assets/images/home-active.png" alt="首页" />
@@ -32,12 +32,9 @@
 <script>
 import RouterLink from './components/RouterLink.vue'
 import RouterView from './components/RouterView.vue'
-import { computed, ref, watch, inject, onBeforeUpdate } from 'vue'
+import { computed, ref, watch, inject } from 'vue'
 
 export default {
-	mounted() {
-		console.log('页面加载')
-	},
 	components: { RouterView, RouterLink },
 	setup() {
 		const current = ref('/mine')
