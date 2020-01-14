@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2116294",
+      "name": "分享",
+      "font_class": "share_icon",
+      "unicode": "e662",
+      "unicode_decimal": 58978
+    },
+    {
+      "icon_id": "2506193",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "5270852",
+      "name": "收 藏-产品详情",
+      "font_class": "shoucang",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    }
+  ]
+}

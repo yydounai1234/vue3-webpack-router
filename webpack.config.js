@@ -26,7 +26,7 @@ module.exports = (env = {}) => ({
         use: 'vue-loader'
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|svg)$/,
         use: {
           loader: 'url-loader',
           options: { limit: 8192 }
@@ -41,7 +41,15 @@ module.exports = (env = {}) => ({
           },
           'css-loader'
         ]
-      }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 1000,
+          name: 'fonts/[name].[hash].[ext]'
+        }
+      },
     ]
   },
   plugins: [
@@ -55,6 +63,7 @@ module.exports = (env = {}) => ({
     hot: true,
     stats: 'minimal',
     contentBase: __dirname,
-    overlay: true
+    overlay: true,
+    historyApiFallback: true,
   }
 })

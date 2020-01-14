@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 class Route {
   constructor(routes) {
-    this.current = ref('/')
+    this.current = ref(window.location.pathname)
     this.routes = routes
     this.pushEffects = []
     window.onpopstate = ({ target }) => {
