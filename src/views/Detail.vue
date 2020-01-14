@@ -5,7 +5,7 @@
 			<div v-html="content"></div>
 		</div>
 		<div class="bar">
-			<div class="items" style="width:60%">
+			<div class="items">
 				<div class="item" @click="handleShareDetail">
 					<span>分享</span>
 					<i class="icon iconfont icon-share_icon"></i>
@@ -15,17 +15,16 @@
 					<i class="collect icon iconfont icon-shoucang"></i>
 				</div>
 			</div>
-			<div class="items" style="width:40%">
-				浏览时间
-				<i class="icon iconfont icon-shijian"></i>
-				<span>{{time}}</span>
+			<div class="items items2">
+				<i class="time icon iconfont icon-shijian"></i>
+				<span>{{computedTime}}</span>
 			</div>
 		</div>
 	</div>
 </template>
 <script>
 import setTime from '../common/time'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 export default {
 	setup() {
 		const time = setTime()
@@ -60,7 +59,8 @@ export default {
 	}
 	.bar {
 		position: fixed;
-		padding-left: 20px;
+		padding: 0 20px;
+		box-sizing: border-box;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -75,6 +75,7 @@ export default {
 			line-height: 52px;
 			align-items: center;
 			justify-content: flex-start;
+			width: 50%;
 			.item {
 				display: flex;
 				align-items: center;
@@ -92,6 +93,12 @@ export default {
 				i {
 					color: #d44d44;
 				}
+			}
+		}
+		.items2 {
+			justify-content: flex-end;
+			.time {
+				padding: 0 5px 0 3px;
 			}
 		}
 	}
