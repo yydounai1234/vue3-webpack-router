@@ -16,7 +16,7 @@ module.exports = (env = {}) => ({
       // is a simple `export * from '@vue/runtime-dom`. However having this
       // extra re-export somehow causes webpack to always invalidate the module
       // on the first HMR update and causes the page to reload.
-      'vue': '@vue/runtime-dom'
+      vue: '@vue/runtime-dom'
     }
   },
   module: {
@@ -43,13 +43,24 @@ module.exports = (env = {}) => ({
         ]
       },
       {
+        test: /\.less$/,
+        loader: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { hmr: !env.prod }
+          },
+          'css-loader',
+          'less-loader'
+        ]
+      },
+      {
         test: /\.(woff2?|eot|ttf|otf)(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url-loader',
         options: {
           limit: 1000,
           name: 'fonts/[name].[hash].[ext]'
         }
-      },
+      }
     ]
   },
   plugins: [
@@ -64,6 +75,6 @@ module.exports = (env = {}) => ({
     stats: 'minimal',
     contentBase: __dirname,
     overlay: true,
-    historyApiFallback: true,
+    historyApiFallback: true
   }
 })

@@ -6,18 +6,25 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "657332",
+      "name": "分期－热度排序",
+      "font_class": "redupaixu",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "827678",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
       "icon_id": "2116294",
       "name": "分享",
       "font_class": "share_icon",
       "unicode": "e662",
       "unicode_decimal": 58978
-    },
-    {
-      "icon_id": "2506193",
-      "name": "时间",
-      "font_class": "shijian",
-      "unicode": "e631",
-      "unicode_decimal": 58929
     },
     {
       "icon_id": "5270852",

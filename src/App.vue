@@ -48,39 +48,39 @@ export default {
 	}
 }
 </script>
-<style>
+<style scoped lang="less">
 .warp {
 	overflow: hidden;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-}
-.item {
-	overflow-y: scroll;
-	height: calc(100% - 52px);
-}
-.nav {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	font-weight: bold;
-	height: 52px;
-	box-shadow: 0 -11px 32px rgba(0, 0, 0, 0.08);
-}
-.nav-item {
-	display: flex;
-	flex-direction: column;
-	font-size: 14px;
-	width: 50vw;
-	align-items: center;
-}
-.nav-img {
-	height: 27px;
-}
-.router-normal {
-	color: #9a9a9a;
-}
-.router-active {
-	color: #d44d44;
+	.item {
+		overflow-y: scroll;
+		height: calc(100% - 52px);
+	}
+	.nav {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		font-weight: bold;
+		height: 52px;
+		box-shadow: 0 -11px 32px rgba(0, 0, 0, 0.08);
+		/deep/ .router-normal {
+			color: #9a9a9a;
+		}
+		/deep/ .router-active {
+			color: #d44d44;
+		}
+		.nav-item {
+			display: flex;
+			flex-direction: column;
+			font-size: 14px;
+			width: 50vw;
+			align-items: center;
+			.nav-img {
+				height: 27px;
+			}
+		}
+	}
 }
 </style>
